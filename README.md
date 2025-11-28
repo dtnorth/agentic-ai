@@ -29,8 +29,8 @@ Step 2: Containerize With Docker
 
 Next, package this app into a portable container image.
 ```
-- docker build -t agentic-ai-app:latest .
-- docker run -p 8080:8080 agentic-ai-app
+ docker build -t agentic-ai-app:latest .
+ docker run -p 8080:8080 agentic-ai-app
 ```
 Explanation:
 
@@ -45,8 +45,8 @@ Define the cloud infrastructure with a managed Kubernetes cluster and Terraform.
 
 Initialize and Apply Terraform
 ```
-- terraform init
-- terraform apply -auto-approve
+ terraform init
+ terraform apply -auto-approve
 ```
 Step 4: Deploy the Agent to Kubernetes
 --------------------------------------
@@ -57,7 +57,7 @@ Once cluster is ready, it’s time to configure kubectl and deploy the agent.
 
 Deploy to Cluster
 ```
-- kubectl apply -f deployment.yaml
+ kubectl apply -f deployment.yaml
 ```
 Explanation:
 
@@ -65,7 +65,7 @@ The deployment ensures high availability with replicas, while the LoadBalancer s
 
 To test:
 ```
-- curl -X POST http://<load-balancer-endpoint>/ask -H "Content-Type: application/json" -d '{"query": "Analyse quarterly revenue trends"}''
+ curl -X POST http://<load-balancer-endpoint>/ask -H "Content-Type: application/json" -d '{"query": "Analyse quarterly revenue trends"}''
 ```
 Step 5: Add Monitoring and Autoscaling
 --------------------------------------
@@ -74,11 +74,11 @@ To make the deployment production-grade, add monitoring and horizontal scaling.
 
 Enable Autoscaling
 ```
-- kubectl autoscale deployment agentic-ai --cpu-percent=70 --min=2 --max=5
+ kubectl autoscale deployment agentic-ai --cpu-percent=70 --min=2 --max=5
 ```
 Monitor Logs
 ```
-- kubectl logs -f deployment/agentic-ai
+ kubectl logs -f deployment/agentic-ai
 ```
 For advanced monitoring, integrate Prometheus and Grafana, or use managed AWS CloudWatch dashboards.
 
