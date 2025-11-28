@@ -65,7 +65,7 @@ The deployment ensures high availability with replicas, while the LoadBalancer s
 
 To test:
 ```
- curl -X POST http://<load-balancer-endpoint>/ask -H "Content-Type: application/json" -d '{"query": "Analyse quarterly revenue trends"}''
+ curl -X POST http://<load-balancer-endpoint>/ask -H "Content-Type: application/json" -d '{"query": "Analyse quarterly revenue trends"}'
 ```
 Step 5: Add Monitoring and Autoscaling
 --------------------------------------
